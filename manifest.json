@@ -1,0 +1,27 @@
+{
+  "name": "Ghostbusker's LibReddit Redirect",
+  "description": "Ensure Reddit always loads the local LibReddit instance",
+  "version": "1.0",
+  "manifest_version": 2,
+  "background": { "scripts": ["background.js"] },
+  "icons": {
+    "48": "img/icon48.png",
+    "128": "img/icon128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://LibReddit.com/*"],
+      "css": ["styles.css"],
+      "run_at": "document_start"
+    }
+  ],
+  "permissions": [
+    "webRequest",
+    "webRequestBlocking",
+    "*://reddit.com/*",
+    "*://www.reddit.com/*",
+    "*://np.reddit.com/*",
+    "*://amp.reddit.com/*",
+    "*://i.reddit.com/*"
+  ]
+}
