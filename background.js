@@ -11,7 +11,7 @@ chrome.webRequest.onBeforeRequest.addListener(
   function (details) {
     const url = new URL(details.url);
 
-    if (url.hostname === "10.1.10.26:1337") return;
+    if (url.hostname === "192.168.1.128:1337") return;
 
     for (const path of excludedPaths) {
       if (url.pathname.indexOf(path) === 0) return;
